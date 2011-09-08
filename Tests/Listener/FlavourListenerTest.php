@@ -9,7 +9,7 @@ namespace Societo\Util\MobileBundle\Tests\Listener;
 use Societo\Util\MobileBundle\Listener\FlavourListener as Listener;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-class FlavourListener extends \PHPUnit_Framework_TestCase
+class FlavourListenerTest extends \PHPUnit_Framework_TestCase
 {
     public function testIsMobileFlavoured()
     {

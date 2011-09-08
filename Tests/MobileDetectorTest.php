@@ -7,9 +7,9 @@
 namespace Societo\Util\MobileBundle\Tests\Listener;
 
 use Societo\Util\MobileBundle\MobileDetector as Detector;
-use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\HeaderBag;
 
-class MobileDetector extends \PHPUnit_Framework_TestCase
+class MobileDetectorTest extends \PHPUnit_Framework_TestCase
 {
     public function testIsMobile()
     {
@@ -74,14 +74,14 @@ class MobileDetector extends \PHPUnit_Framework_TestCase
 
         $paraemters = array();
         if ($ua) {
-            $paraemters['HTTP_USER_AGENT'] = $ua;
+            $paraemters['USER_AGENT'] = $ua;
         }
 
         if ($accept) {
-            $paraemters['HTTP_ACCEPT'] = $accept;
+            $paraemters['ACCEPT'] = $accept;
         }
 
-        $request->headers = new ParameterBag($paraemters);
+        $request->headers = new HeaderBag($paraemters);
 
         return $request;
     }
